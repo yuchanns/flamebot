@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -16,5 +17,8 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   },
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
 }
 
