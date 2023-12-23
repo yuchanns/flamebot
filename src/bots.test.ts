@@ -1,5 +1,12 @@
 import { createTelegramBotAPI } from "./bots"
 
+declare global {
+  function getMiniflareBindings(): {
+    ENV_BOT_TOKEN: string
+    ENV_CHAT_ID: string
+  }
+}
+
 const env = getMiniflareBindings()
 
 describe("telegram_bot", () => {

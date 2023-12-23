@@ -97,10 +97,3 @@ export interface TelegramBotAPI {
     reply_to_message_id?: number
   }): Promise<Response<Message>>
 }
-
-declare global {
-  function getMiniflareBindings(): {
-    ENV_BOT_TOKEN: string
-    ENV_CHAT_ID: string
-  }
-}
