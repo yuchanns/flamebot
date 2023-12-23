@@ -101,5 +101,6 @@ export interface TelegramBotAPI {
 declare global {
   function getMiniflareBindings(): {
     ENV_BOT_TOKEN: string
+    ENV_CHAT_ID: string
   }
 }
