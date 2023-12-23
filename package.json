@@ -1,0 +1,28 @@
+{
+  "name": "flamebot",
+  "version": "0.0.1",
+  "description": "An Incomplete implementation of Telegram Bot SDK for Cloudflare ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --verbose"
+  },
+  "keywords": [
+    "telegram bot",
+    "cloudflare"
+  ],
+  "author": "Hanchin Hsieh <me@yuchanns.xyz>",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@types/jest": "^29.5.11",
+    "esbuild": "^0.19.10",
+    "esbuild-jest": "^0.5.0",
+    "hono": "^3.11.9",
+    "jest": "^29.7.0",
+    "jest-environment-miniflare": "^2.14.1",
+    "miniflare": "^3.20231030.4",
+    "typescript": "^5.3.3"
+  }
+}
