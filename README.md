@@ -1,4 +1,7 @@
 # flamebot
+
+[![npm version](https://badge.fury.io/js/@yuchanns%2Fflamebot.svg)](https://badge.fury.io/js/@yuchanns%2Fflamebot)
+
 An Incomplete implementation of Telegram Bot SDK for Cloudflare.
 
 ## Why Develop Another Telegram Bot SDK?
