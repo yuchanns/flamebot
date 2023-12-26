@@ -35,6 +35,14 @@ export type Chat = {
   last_name?: string
 }
 
+export type PhotoSize = {
+  file_id: string
+  file_unique_id: string
+  width: number
+  height: number
+  file_size?: number
+}
+
 export type Message = {
   message_id: number
   message_thread_id?: number
@@ -44,6 +52,7 @@ export type Message = {
   text?: string
   reply_to_message?: Message
   entities?: MessageEntity[]
+  photo?: PhotoSize[]
 }
 
 export type Update = {
@@ -52,6 +61,14 @@ export type Update = {
   edited_message?: Message
   channel_post?: Message
   edited_channel_post?: Message
+}
+
+export type File = {
+  file_id: string
+  file_unique_id: string
+  file_size?: number
+  file_path?: string
+  link?: string
 }
 
 export interface TelegramBotAPI {
@@ -96,4 +113,8 @@ export interface TelegramBotAPI {
     allow_sending_without_reply?: boolean
     reply_to_message_id?: number
   }): Promise<Response<Message>>
+  getFile(params: {
+    file_id: string,
+    with_link?: boolean
+  }): Promise<Response<File>>
 }

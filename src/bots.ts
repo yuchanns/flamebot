@@ -1,4 +1,4 @@
-import { TelegramBotAPI } from "./types"
+import { TelegramBotAPI, Response, File } from "./types"
 import { fetchFormData, fetchJSON, makeURL } from "./utils"
 
 export const createTelegramBotAPI = (token: string) => {
@@ -27,6 +27,17 @@ export const createTelegramBotAPI = (token: string) => {
       const u = makeURL(token, "sendVoice")
       const response = await fetchFormData(u, params)
       return await response.json()
+    },
+    getFile: async (params) => {
+      const u = makeURL(token, "getFile")
+      const response = await fetchJSON(u, {
+        file_id: params.file_id
+      })
+      const resp: Response<File> = await response.json()
+      if (params.with_link && resp.result.file_path) {
+        resp.result.link = makeURL(token, resp.result.file_path).toString()
+      }
+      return resp
     }
   } as TelegramBotAPI
 }

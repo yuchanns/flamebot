@@ -4,6 +4,7 @@ declare global {
   function getMiniflareBindings(): {
     ENV_BOT_TOKEN: string
     ENV_CHAT_ID: string
+    ENV_FILE_ID: string
   }
 }
 
@@ -31,6 +32,11 @@ describe("telegram_bot", () => {
     })
     expect(response.result.message_id).toBeTruthy()
   })
+
+  test("getFile", async () => {
+    const message = await bot.getFile({ file_id: env.ENV_FILE_ID, with_link: true })
+    expect(message.result.link).toBeTruthy()
+  }, 10000)
 
   // TODO: complete other unit tests
   // await bot.sendWebhook({
