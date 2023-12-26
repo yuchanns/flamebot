@@ -4,6 +4,10 @@ export const makeURL = (token: string, path: string) => {
   return new URL(`https://api.telegram.org/bot${token}/${path}`)
 }
 
+export const makeFilePath = (token: string, path: string) => {
+  return `https://api.telegram.org/file/bot${token}/${path}`
+}
+
 export const fetchJSON = async (u: URL, data: any) => {
   const body = JSON.stringify(data)
   const response = await fetch(new Request(u), {

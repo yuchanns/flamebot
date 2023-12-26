@@ -1,5 +1,5 @@
 import { TelegramBotAPI, Response, File } from "./types"
-import { fetchFormData, fetchJSON, makeURL } from "./utils"
+import { fetchFormData, fetchJSON, makeFilePath, makeURL } from "./utils"
 
 export const createTelegramBotAPI = (token: string) => {
   return {
@@ -35,7 +35,7 @@ export const createTelegramBotAPI = (token: string) => {
       })
       const resp: Response<File> = await response.json()
       if (params.with_link && resp.result.file_path) {
-        resp.result.link = makeURL(token, resp.result.file_path).toString()
+        resp.result.link = makeFilePath(token, resp.result.file_path)
       }
       return resp
     }
