@@ -12,6 +12,10 @@
     "telegram bot",
     "cloudflare"
   ],
+  "repository": {
+    "type": "git", 
+    "url": "https://github.com/yuchanns/flamebot.git"
+  },
   "author": "Hanchin Hsieh <me@yuchanns.xyz>",
   "license": "MIT",
   "devDependencies": {
