@@ -1,5 +1,5 @@
 // https://core.telegram.org/bots/api#making-requests
-export type Response<T> = {
+export interface Response<T> {
   ok: boolean
   description?: string
   error_code: number
@@ -10,14 +10,14 @@ export type Response<T> = {
   result: T
 }
 
-export type User = {
+export interface User {
   id: number
   is_bot: boolean
   username: string
 }
 
-export type MessageEntity = {
-  "type": string
+export interface MessageEntity {
+  type: string
   offset: number
   length: number
   url?: string
@@ -26,16 +26,16 @@ export type MessageEntity = {
   custom_emoji_id: string
 }
 
-export type Chat = {
+export interface Chat {
   id: number
-  "type": string
+  type: string
   title?: string
   username?: string
   first_name?: string
   last_name?: string
 }
 
-export type PhotoSize = {
+export interface PhotoSize {
   file_id: string
   file_unique_id: string
   width: number
@@ -43,7 +43,7 @@ export type PhotoSize = {
   file_size?: number
 }
 
-export type Message = {
+export interface Message {
   message_id: number
   message_thread_id?: number
   from: User
@@ -55,7 +55,7 @@ export type Message = {
   photo?: PhotoSize[]
 }
 
-export type Update = {
+export interface Update {
   update_id: number
   message?: Message
   edited_message?: Message
@@ -63,7 +63,7 @@ export type Update = {
   edited_channel_post?: Message
 }
 
-export type File = {
+export interface File {
   file_id: string
   file_unique_id: string
   file_size?: number
@@ -73,14 +73,14 @@ export type File = {
 
 export interface TelegramBotAPI {
   // https://core.telegram.org/bots/api#setwebhook
-  setWebhook(params: {
-    url: string,
+  setWebhook: (params: {
+    url: string
     secret_token: string
-  }): Promise<Response<boolean>>
+  }) => Promise<Response<boolean>>
   // https://core.telegram.org/bots/api#getme
-  getMe(): Promise<Response<User>>
+  getMe: () => Promise<Response<User>>
   // https://core.telegram.org/bots/api#sendmessage
-  sendMessage(params: {
+  sendMessage: (params: {
     chat_id: string | number
     message_thread_id?: number
     text: string
@@ -90,8 +90,8 @@ export interface TelegramBotAPI {
     disable_notification?: boolean
     protect_content?: boolean
     allow_sending_without_reply?: boolean
-  }): Promise<Response<Message>>
-  editMessageText(params: {
+  }) => Promise<Response<Message>>
+  editMessageText: (params: {
     chat_id?: string | number
     message_id?: number
     inline_message_id?: string
@@ -99,8 +99,8 @@ export interface TelegramBotAPI {
     parse_mode?: string
     entities?: MessageEntity[]
     disable_web_page_preview?: boolean
-  }): Promise<Response<Message>>
-  sendVoice(params: {
+  }) => Promise<Response<Message>>
+  sendVoice: (params: {
     chat_id: string | number
     message_thread_id?: number
     voice: Blob
@@ -112,9 +112,9 @@ export interface TelegramBotAPI {
     protect_content?: boolean
     allow_sending_without_reply?: boolean
     reply_to_message_id?: number
-  }): Promise<Response<Message>>
-  getFile(params: {
-    file_id: string,
+  }) => Promise<Response<Message>>
+  getFile: (params: {
+    file_id: string
     with_link?: boolean
-  }): Promise<Response<File>>
+  }) => Promise<Response<File>>
 }
