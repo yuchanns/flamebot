@@ -30,4 +30,34 @@ describe('telegram_bot', () => {
     })
     expect(response.result.message_id).toBeTruthy()
   })
+
+  it('sendInlineKeyboard', async () => {
+    const message = await bot.sendMessage({
+      chat_id: env.ENV_CHAT_ID,
+      text: 'hello world!',
+      reply_markup: {
+        inline_keyboard: [
+          [
+            {
+              text: 'Click me',
+              callback_data: 'click_me',
+            },
+            {
+              text: 'Click me too',
+              callback_data: 'click_me_too',
+            },
+          ],
+          [
+            {
+              text: 'Click me',
+              web_app: {
+                url: 'https://example.com',
+              },
+            },
+          ],
+        ],
+      },
+    })
+    expect(message.result.message_id).toBeTruthy()
+  })
 })

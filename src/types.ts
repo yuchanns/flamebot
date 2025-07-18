@@ -71,6 +71,73 @@ export interface File {
   link?: string
 }
 
+export interface InlineKeyboardMarkup {
+  inline_keyboard: Array<Array<{
+    text: string
+    url?: string
+    callback_data?: string
+    web_app?: {
+      url: string
+    }
+    login_url?: {
+      url: string
+      forward_text?: string
+      bot_username?: string
+      request_write_access?: boolean
+    }
+  }>>
+}
+
+export interface ReplyKeyboardMarkup {
+  keyboard: Array<Array<{
+    text: string
+    request_users?: {
+      request_id: number
+      user_is_bot?: boolean
+      user_is_premium?: boolean
+      max_quantity?: number
+      request_name?: boolean
+      request_username?: boolean
+      request_photo?: boolean
+    }
+    request_chat?: {
+      request_id: number
+      chat_is_channel?: boolean
+      chat_is_forum?: boolean
+      chat_has_username?: boolean
+      chat_is_created?: boolean
+      bot_is_member?: boolean
+      request_title?: boolean
+      request_username?: boolean
+      request_photo?: boolean
+    }
+    request_contact?: boolean
+    request_location?: boolean
+    request_poll?: {
+      type: string
+    }
+    web_app?: {
+      url: string
+    }
+  }>>
+  is_persistent?: boolean
+  resize_keyboard?: boolean
+  one_time_keyboard?: boolean
+  input_field_placeholder?: string
+  selective?: boolean
+}
+
+export interface ReplyKeyboardRemove {
+  remove_keyboard: boolean
+  selective?: boolean
+}
+
+export interface ForceReply {
+  force_reply: boolean
+  input_field_placeholder?: string
+  selective?: boolean
+}
+
 export interface TelegramBotAPI {
   // https://core.telegram.org/bots/api#setwebhook
   setWebhook: (params: {
@@ -90,6 +157,7 @@ export interface TelegramBotAPI {
     disable_notification?: boolean
     protect_content?: boolean
     allow_sending_without_reply?: boolean
+    reply_markup?: InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply
   }) => Promise<Response<Message>>
   editMessageText: (params: {
     chat_id?: string | number
