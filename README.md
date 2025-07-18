@@ -11,4 +11,24 @@ While the Telegram Bot SDK NPM packages are excellent, they cannot be used in Cl
 As I have limited time and energy, I have added features based on my own needs. However, anyone is welcome to submit Pull Requests if they require additional features.
 
 ## How to use
+
+Minimal usage in Cloudflare Worker:
+
+```js
+import { createTelegramBotAPI } from '@yuchanns/flamebot'
+
+const bot = createTelegramBotAPI(BOT_TOKEN)
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  const me = await bot.getMe()
+  return new Response(JSON.stringify(me))
+}
+```
+
+_You can import exported functions/types directly from your package. No need to worry about sub-paths under dist._
+
 See [tests](./src/bots.test.ts)

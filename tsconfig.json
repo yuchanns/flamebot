@@ -4,14 +4,17 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
+    "rootDir": "src",
     "moduleResolution": "bundler",
     "strict": true,
     "declaration": true,
     "outDir": "dist",
     "esModuleInterop": true
   },
+  "include": ["src"],
   "exclude": [
     "src/**/*.test.ts",
     "dist"
