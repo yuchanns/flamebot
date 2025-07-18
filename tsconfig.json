@@ -6,18 +6,14 @@
     "lib": [
       "esnext"
     ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "types": [
-      "vitest/globals",
-      "@cloudflare/workers-types"
-    ],
+    "moduleResolution": "bundler",
     "strict": true,
     "declaration": true,
     "outDir": "dist",
     "esModuleInterop": true
   },
   "exclude": [
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "dist"
   ]
 }

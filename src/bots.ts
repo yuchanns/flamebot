@@ -33,7 +33,7 @@ export function createTelegramBotAPI(token: string) {
       const response = await fetchJSON(u, {
         file_id: params.file_id,
       })
-      const resp: Response<File> = await response.json()
+      const resp = (await response.json()) as Response<File>
       if (params.with_link && resp.result.file_path) {
         resp.result.link = makeFilePath(token, resp.result.file_path)
       }

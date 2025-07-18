@@ -7,17 +7,13 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@cloudflare/workers-types':
-        specifier: ^4.20250718.0
-        version: 4.20250718.0
-      dotenv:
-        specifier: ^17.2.0
-        version: 17.2.0
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.17.0
         version: 4.17.0(@vue/compiler-sfc@3.5.17)(eslint@9.31.0)(typescript@5.8.3)(vitest@3.2.4(@types/debug@4.1.12)(@types/node@24.0.14)(yaml@2.8.0))
+      dotenv:
+        specifier: ^17.2.0
+        version: 17.2.0
       esbuild:
         specifier: ^0.25.6
         version: 0.25.6
@@ -28,7 +24,7 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vitest:
-        specifier: ~3.2.4
+        specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.0.14)(yaml@2.8.0)
       zod:
         specifier: ^4.0.5
@@ -110,9 +106,6 @@ packages:
 
   '@clack/prompts@0.11.0':
     resolution: {integrity: sha512-pMN5FcrEw9hUkZA4f+zLlzivQSeQf5dRGJjSUbvVYDLvpKCdQx5OaknvKzgbtXOizhP+SJJJjqEbOe55uKKfAw==}
-
-  '@cloudflare/workers-types@4.20250718.0':
-    resolution: {integrity: sha512-RpYLgb81veUGtlLQINwGldsXQDcaK2/Z6QGeSq88yyd9o4tZYw7dzMu34sHgoCeb0QiPQWtetXiPf99PrIj+YQ==}
 
   '@es-joy/jsdoccomment@0.50.2':
     resolution: {integrity: sha512-YAdE/IJSpwbOTiaURNCKECdAwqrJuFiZhylmesBcIRawtYKnBR2wxPhoIewMg+Yu+QuYvHfJNReWpoxGBKOChA==}
@@ -1861,8 +1854,6 @@ snapshots:
       '@clack/core': 0.5.0
       picocolors: 1.1.1
       sisteransi: 1.0.5
-
-  '@cloudflare/workers-types@4.20250718.0': {}
 
   '@es-joy/jsdoccomment@0.50.2':
     dependencies:
