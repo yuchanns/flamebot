@@ -1,24 +1,23 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "target": "ESNext",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "strict": true,
-    "outDir": "dist",
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
     "lib": [
       "esnext"
     ],
+    "module": "commonjs",
+    "moduleResolution": "node",
     "types": [
-      "@cloudflare/workers-types",
-      "jest"
+      "vitest/globals",
+      "@cloudflare/workers-types"
     ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist",
+    "esModuleInterop": true
   },
   "exclude": [
     "src/**/*.test.ts"
   ]
 }
-
