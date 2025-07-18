@@ -22,7 +22,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
     "dotenv": "^17.2.0",
-    "esbuild": "^0.25.6",
     "eslint": "^9.31.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",
