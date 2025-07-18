@@ -1,6 +1,6 @@
 {
   "name": "@yuchanns/flamebot",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "An Incomplete implementation of Telegram Bot SDK for Cloudflare ",
   "author": "Hanchin Hsieh <me@yuchanns.xyz>",
   "license": "MIT",
