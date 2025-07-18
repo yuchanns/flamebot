@@ -4,20 +4,19 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "lib": [
-      "esnext"
+      "esnext",
+      "dom"
     ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "types": [
-      "vitest/globals",
-      "@cloudflare/workers-types"
-    ],
+    "rootDir": "src",
+    "moduleResolution": "bundler",
     "strict": true,
     "declaration": true,
     "outDir": "dist",
     "esModuleInterop": true
   },
+  "include": ["src"],
   "exclude": [
-    "src/**/*.test.ts"
+    "src/**/*.test.ts",
+    "dist"
   ]
 }

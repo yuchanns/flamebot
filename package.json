@@ -1,6 +1,6 @@
 {
   "name": "@yuchanns/flamebot",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "An Incomplete implementation of Telegram Bot SDK for Cloudflare ",
   "author": "Hanchin Hsieh <me@yuchanns.xyz>",
   "license": "MIT",
@@ -19,16 +19,12 @@
     "test": "vitest",
     "lint": "eslint --fix"
   },
-  "dependencies": {
-    "@cloudflare/workers-types": "^4.20250718.0",
-    "dotenv": "^17.2.0"
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
-    "esbuild": "^0.25.6",
+    "dotenv": "^17.2.0",
     "eslint": "^9.31.0",
     "typescript": "^5.8.3",
-    "vitest": "~3.2.4",
+    "vitest": "^3.2.4",
     "zod": "^4.0.5"
   }
 }
